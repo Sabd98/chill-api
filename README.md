@@ -85,6 +85,7 @@ The project follows a layered architecture (MVC):
 - `POST /api/login` - Login with email and password
 - `GET /api/profile` - Get user profile (Protected)
 - `PUT /api/profile` - Update user profile (Protected)
+- `POST /api/upload` - Upload user avatar (Protected)
 
 ### Movies (Protected)
 - `GET /api/movies` - Get all movies (supports query params: `search`, `genre`, `sortBy`)

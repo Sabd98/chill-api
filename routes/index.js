@@ -4,6 +4,7 @@ import movieRoutes from './movieRoutes.js';
 import seriesRoutes from './seriesRoutes.js';
 import myListRoutes from './myListRoutes.js';
 import subscriptionRoutes from './subscriptionRoutes.js';
+import uploadRoutes from './uploadRoutes.js';
 
 const router = express.Router();
 
@@ -12,5 +13,6 @@ router.use('/movies', movieRoutes);
 router.use('/series', seriesRoutes);
 router.use('/my-list', myListRoutes);
 router.use('/subscription', subscriptionRoutes);
+router.use('/upload', uploadRoutes);
 
 export default router;

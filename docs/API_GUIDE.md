@@ -475,3 +475,32 @@ Membatalkan pesanan yang belum dibayar.
       "orderId": "order-uuid"
     }
     ```
+
+---
+
+## 7. Upload
+
+Endpoint untuk mengunggah file.
+
+### Upload Avatar
+Mengunggah gambar avatar pengguna.
+
+*   **URL**: `/upload`
+*   **Method**: `POST`
+*   **Auth**: Bearer Token
+*   **Header**: `Content-Type: multipart/form-data`
+*   **Body**:
+    *   `avatar`: File gambar (jpg, jpeg, png, gif) (Max 5MB)
+*   **Response (200 OK)**:
+    ```json
+    {
+      "status": "success",
+      "message": "File uploaded successfully",
+      "data": {
+        "filename": "avatar-1708234567890.jpg",
+        "mimetype": "image/jpeg",
+        "size": 1024,
+        "url": "http://localhost:3000/uploads/avatar-1708234567890.jpg"
+      }
+    }
+    ```
