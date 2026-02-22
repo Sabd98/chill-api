@@ -15,7 +15,7 @@ Endpoint untuk manajemen akses user.
 ### Register User
 Mendaftarkan pengguna baru.
 
-*   **URL**: `/users/register`
+*   **URL**: `/register`
 *   **Method**: `POST`
 *   **Auth**: Tidak perlu
 *   **Body**:
@@ -40,7 +40,7 @@ Mendaftarkan pengguna baru.
 ### Login User
 Masuk dan mendapatkan token akses (JWT).
 
-*   **URL**: `/users/login`
+*   **URL**: `/login`
 *   **Method**: `POST`
 *   **Auth**: Tidak perlu
 *   **Body**:
@@ -76,7 +76,7 @@ Endpoint untuk mengelola data profil pengguna.
 ### Get Profile
 Mendapatkan data profil user yang sedang login.
 
-*   **URL**: `/users/profile`
+*   **URL**: `/profile`
 *   **Method**: `GET`
 *   **Auth**: Bearer Token
 *   **Response (200 OK)**:
@@ -96,7 +96,7 @@ Mendapatkan data profil user yang sedang login.
 ### Update Profile
 Mengubah data profil user.
 
-*   **URL**: `/users/profile`
+*   **URL**: `/profile`
 *   **Method**: `PUT`
 *   **Auth**: Bearer Token
 *   **Body** (Kirim field yang ingin diubah saja):
