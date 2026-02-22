@@ -4,7 +4,8 @@ import { successResponse, errorResponse } from '../utils/responseHelper.js';
 class MovieController {
   static async getAll(req, res) {
     try {
-      const movies = await MovieService.getAllMovies();
+      const { genre, sortBy, sortOrder, search } = req.query;
+      const movies = await MovieService.getAllMovies({ genre, sortBy, sortOrder, search });
       return successResponse(res, 'Movies retrieved successfully', movies);
     } catch (error) {
       return errorResponse(res, error.message, 500);

@@ -5,7 +5,8 @@ class MyListController {
   static async getMyList(req, res) {
     try {
       const userId = req.user.id;
-      const list = await MyListService.getMyList(userId);
+      const { genre, sortBy, sortOrder, search } = req.query;
+      const list = await MyListService.getMyList(userId, { genre, sortBy, sortOrder, search });
       return successResponse(res, 'My List retrieved successfully', list);
     } catch (error) {
       return errorResponse(res, error.message, 500);

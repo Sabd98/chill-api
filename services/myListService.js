@@ -2,8 +2,8 @@ import MyListModel from '../models/myListModel.js';
 import { v4 as uuidv4 } from 'uuid';
 
 class MyListService {
-  static async getMyList(userId) {
-    return await MyListModel.findByUserId(userId);
+  static async getMyList(userId, params) {
+    return await MyListModel.findByUserId(userId, params);
   }
 
   static async addToList(userId, contentId, type) {

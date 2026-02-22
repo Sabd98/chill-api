@@ -83,15 +83,15 @@ The project follows a layered architecture (MVC):
 - `PUT /api/profile` - Update user profile (Protected)
 
 ### Movies (Protected)
-- `GET /api/movies` - Get all movies (with genres)
+- `GET /api/movies` - Get all movies (supports query params: `search`, `genre`, `sortBy`)
 - `GET /api/movies/:id` - Get movie details
 
 ### Series (Protected)
-- `GET /api/series` - Get all series (with genres)
+- `GET /api/series` - Get all series (supports query params: `search`, `genre`, `sortBy`)
 - `GET /api/series/:id` - Get series details (with episodes)
 
 ### My List (Protected)
-- `GET /api/my-list` - Get user's my list
+- `GET /api/my-list` - Get user's my list (supports query params: `search`, `genre`, `sortBy`)
 - `POST /api/my-list` - Add a movie/series to my list
 - `DELETE /api/my-list` - Remove a movie/series from my list
 

@@ -1,8 +1,8 @@
 import SeriesModel from '../models/seriesModel.js';
 
 class SeriesService {
-  static async getAllSeries() {
-    return await SeriesModel.findAll();
+  static async getAllSeries(params) {
+    return await SeriesModel.findAll(params);
   }
 
   static async getSeriesById(id) {

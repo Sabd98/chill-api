@@ -22,7 +22,9 @@ Mendaftarkan pengguna baru.
     ```json
     {
       "username": "johndoe",
-      "password": "secretpassword"
+      "password": "secretpassword",
+      "email": "johndoe@example.com",
+      "fullname": "John Doe"
     }
     ```
 *   **Response (201 Created)**:
@@ -32,7 +34,9 @@ Mendaftarkan pengguna baru.
       "message": "User registered successfully",
       "data": {
         "id": "uuid-string",
-        "username": "johndoe"
+        "username": "johndoe",
+        "email": "johndoe@example.com",
+        "fullname": "John Doe"
       }
     }
     ```
@@ -88,7 +92,6 @@ Mendapatkan data profil user yang sedang login.
         "id": "uuid-string",
         "username": "johndoe",
         "created_at": "2024-..."
-        // data lain seperti avatar jika ada
       }
     }
     ```
@@ -123,10 +126,18 @@ Endpoint untuk konten film.
 
 ### Get All Movies
 Mendapatkan semua daftar film.
+Mendukung filtering, sorting, dan searching via query params.
 
 *   **URL**: `/movies`
 *   **Method**: `GET`
 *   **Auth**: Bearer Token
+*   **Query Params (Postman)**:
+    | Key | Value (Contoh) | Deskripsi |
+    | :--- | :--- | :--- |
+    | `search` | `Batman` | Cari judul film |
+    | `genre` | `Action` | Filter berdasarkan genre |
+    | `sortBy` | `title` | `title` atau `id` |
+    | `sortOrder` | `ASC` | `ASC` atau `DESC` (Default: `ASC`) |
 *   **Response (200 OK)**:
     ```json
     {
@@ -172,10 +183,18 @@ Endpoint untuk konten serial TV.
 
 ### Get All Series
 Mendapatkan semua daftar series.
+Mendukung filtering, sorting, dan searching via query params.
 
 *   **URL**: `/series`
 *   **Method**: `GET`
 *   **Auth**: Bearer Token
+*   **Query Params (Postman)**:
+    | Key | Value (Contoh) | Deskripsi |
+    | :--- | :--- | :--- |
+    | `search` | `Stranger` | Cari judul series |
+    | `genre` | `Sci-Fi` | Filter berdasarkan genre |
+    | `sortBy` | `title` | `title` atau `id` |
+    | `sortOrder` | `ASC` | `ASC` atau `DESC` (Default: `ASC`) |
 *   **Response (200 OK)**:
     ```json
     {
@@ -227,10 +246,18 @@ Endpoint untuk mengelola daftar tontonan pribadi (Watchlist).
 
 ### Get My List
 Melihat semua item di daftar saya.
+Mendukung filtering, sorting, dan searching via query params.
 
 *   **URL**: `/my-list`
 *   **Method**: `GET`
 *   **Auth**: Bearer Token
+*   **Query Params (Postman)**:
+    | Key | Value (Contoh) | Deskripsi |
+    | :--- | :--- | :--- |
+    | `search` | `Avenger` | Cari judul di My List |
+    | `genre` | `Action` | Filter berdasarkan genre |
+    | `sortBy` | `title` | `title` atau `id` |
+    | `sortOrder` | `ASC` | `ASC` atau `DESC` (Default: `ASC`) |
 *   **Response (200 OK)**:
     ```json
     {
@@ -239,8 +266,8 @@ Melihat semua item di daftar saya.
       "data": [
         {
           "my_list_id": "uuid",
-          "movie_title": "Judul Film", // Jika item adalah film
-          "series_title": null         // Jika item adalah series
+          "movie_title": "Judul Film", 
+          "series_title": null        
           ...
         }
       ]

@@ -1,8 +1,8 @@
 import MovieModel from '../models/movieModel.js';
 
 class MovieService {
-  static async getAllMovies() {
-    return await MovieModel.findAll();
+  static async getAllMovies(params) {
+    return await MovieModel.findAll(params);
   }
 
   static async getMovieById(id) {

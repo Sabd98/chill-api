@@ -4,7 +4,8 @@ import { successResponse, errorResponse } from '../utils/responseHelper.js';
 class SeriesController {
   static async getAll(req, res) {
     try {
-      const series = await SeriesService.getAllSeries();
+      const { genre, sortBy, sortOrder, search } = req.query;
+      const series = await SeriesService.getAllSeries({ genre, sortBy, sortOrder, search });
       return successResponse(res, 'Series retrieved successfully', series);
     } catch (error) {
       return errorResponse(res, error.message, 500);

@@ -1,9 +1,9 @@
 import pool from '../config/db.js';
 
 class MyListModel {
-  static async findByUserId(userId) {
-    const query = `
-      SELECT ml.id as my_list_id, ml.created_at, ml.user_id,
+  static async findByUserId(userId, params = {}) {
+    let query = `
+      SELECT ml.id as my_list_id, ml.user_id,
              m.id as movie_id, m.title as movie_title, m.image_url as movie_image,
              s.id as series_id, s.title as series_title, s.image_url as series_image
       FROM my_list ml
@@ -11,7 +11,33 @@ class MyListModel {
       LEFT JOIN series s ON ml.series_id = s.id
       WHERE ml.user_id = ?
     `;
-    const [rows] = await pool.query(query, [userId]);
+    const queryParams = [userId];
+
+    if (params.search) {
+      query += ` AND (m.title LIKE ? OR s.title LIKE ?)`;
+      queryParams.push(`%${params.search}%`, `%${params.search}%`);
+    }
+
+    if (params.genre) {
+      query += ` AND (
+        (ml.movies_id IS NOT NULL AND ml.movies_id IN (
+           SELECT mg.movie_id FROM movie_genres mg JOIN genre g ON mg.genre_id = g.id WHERE g.name = ?
+        ))
+        OR 
+        (ml.series_id IS NOT NULL AND ml.series_id IN (
+           SELECT sg.series_id FROM series_genres sg JOIN genre g ON sg.genre_id = g.id WHERE g.name = ?
+        ))
+      )`;
+      queryParams.push(params.genre, params.genre);
+    }
+
+    const sortOrder = params.sortOrder && params.sortOrder.trim().toUpperCase() === 'DESC' ? 'DESC' : 'ASC';
+
+    if (params.sortBy === 'title') {
+      query += ` ORDER BY COALESCE(m.title, s.title) ${sortOrder}`;
+    } 
+
+    const [rows] = await pool.query(query, queryParams);
     return rows;
   }
 
