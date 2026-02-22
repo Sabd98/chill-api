@@ -38,6 +38,9 @@ The project follows a layered architecture (MVC):
     DB_PASSWORD=your_password
     DB_NAME=your_database_name
     JWT_SECRET=supersecretkey
+    EMAIL_USER=your_email@gmail.com
+    EMAIL_PASS=your_app_password
+    BASE_URL=http://localhost:3000
     ```
 
 3.  **Database Migration**
@@ -77,8 +80,9 @@ The project follows a layered architecture (MVC):
 ## API Endpoints
 
 ### Auth & Users
-- `POST /api/register` - Register a new user
-- `POST /api/login` - Login and get JWT
+- `POST /api/register` - Register a new user (with email verification)
+- `GET /api/verify-email` - Verify user email
+- `POST /api/login` - Login with email and password
 - `GET /api/profile` - Get user profile (Protected)
 - `PUT /api/profile` - Update user profile (Protected)
 

@@ -13,9 +13,9 @@ Dokumentasi lengkap penggunaan API untuk aplikasi Chill (Video Streaming Service
 Endpoint untuk manajemen akses user.
 
 ### Register User
-Mendaftarkan pengguna baru.
+Mendaftarkan pengguna baru. Sistem akan mengirimkan email verifikasi.
 
-*   **URL**: `/users/register`
+*   **URL**: `/register`
 *   **Method**: `POST`
 *   **Auth**: Tidak perlu
 *   **Body**:
@@ -41,16 +41,39 @@ Mendaftarkan pengguna baru.
     }
     ```
 
-### Login User
-Masuk dan mendapatkan token akses (JWT).
+### Verify Email
+Verifikasi email pengguna menggunakan token yang dikirimkan ke email.
 
-*   **URL**: `/users/login`
+*   **URL**: `/verify-email`
+*   **Method**: `GET`
+*   **Auth**: Tidak perlu
+*   **Query Params**:
+    *   `token`: Token verifikasi yang diterima di email.
+*   **Response (200 OK)**:
+    ```json
+    {
+      "status": "success",
+      "message": "Email Verified Successfully"
+    }
+    ```
+*   **Response (400 Bad Request)**:
+    ```json
+    {
+      "status": "error",
+      "message": "Invalid Verification Token"
+    }
+    ```
+
+### Login User
+Masuk dengan email dan password untuk mendapatkan token akses (JWT).
+
+*   **URL**: `/login`
 *   **Method**: `POST`
 *   **Auth**: Tidak perlu
 *   **Body**:
     ```json
     {
-      "username": "johndoe",
+      "email": "johndoe@example.com",
       "password": "secretpassword"
     }
     ```
@@ -63,7 +86,8 @@ Masuk dan mendapatkan token akses (JWT).
         "token": "eyJh... (JWT Token)",
         "user": {
           "id": "uuid-string",
-          "username": "johndoe"
+          "username": "johndoe",
+          "email": "johndoe@example.com"
         }
       }
     }
@@ -80,7 +104,7 @@ Endpoint untuk mengelola data profil pengguna.
 ### Get Profile
 Mendapatkan data profil user yang sedang login.
 
-*   **URL**: `/users/profile`
+*   **URL**: `/profile`
 *   **Method**: `GET`
 *   **Auth**: Bearer Token
 *   **Response (200 OK)**:
@@ -91,6 +115,7 @@ Mendapatkan data profil user yang sedang login.
       "data": {
         "id": "uuid-string",
         "username": "johndoe",
+        "email": "johndoe@example.com",
         "created_at": "2024-..."
       }
     }
@@ -99,7 +124,7 @@ Mendapatkan data profil user yang sedang login.
 ### Update Profile
 Mengubah data profil user.
 
-*   **URL**: `/users/profile`
+*   **URL**: `/profile`
 *   **Method**: `PUT`
 *   **Auth**: Bearer Token
 *   **Body** (Kirim field yang ingin diubah saja):

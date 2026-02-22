@@ -29,6 +29,8 @@ CREATE TABLE `user` (
   `fullname` varchar(255) DEFAULT NULL,
   `password` varchar(255) NOT NULL,
   `avatar` varchar(255) DEFAULT NULL,
+  `verification_token` varchar(255) DEFAULT NULL,
+  `is_verified` tinyint(1) DEFAULT '0',
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)

@@ -16,14 +16,28 @@ class UserController {
     }
   }
 
+  static async verifyEmail(req, res) {
+    try {
+      const { token } = req.query;
+      if (!token) {
+        return errorResponse(res, 'Verification token is required', 400);
+      }
+      
+      await UserService.verifyEmail(token);
+      return successResponse(res, 'Email Verified Successfully');
+    } catch (error) {
+      return errorResponse(res, error.message, 400);
+    }
+  }
+
   static async login(req, res) {
     try {
-      const { username, password } = req.body;
-      if (!username || !password) {
-        return errorResponse(res, 'Username and password are required', 400);
+      const { email, password } = req.body;
+      if (!email || !password) {
+        return errorResponse(res, 'Email and password are required', 400);
       }
 
-      const data = await UserService.login(username, password);
+      const data = await UserService.login(email, password);
       return successResponse(res, 'Login successful', data);
     } catch (error) {
       return errorResponse(res, error.message, 401);
