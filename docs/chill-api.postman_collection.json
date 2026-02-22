@@ -16,7 +16,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": " {\r\n      \"username\": \"johndoe\",\r\n      \"password\": \"tes123\",\r\n      \"email\": \"johndoe@example.com\",\r\n      \"fullname\": \"John Doe\"\r\n    }",
+              "raw": " {\r\n      \"username\": \"sbd987\",\r\n      \"password\": \"tes123\",\r\n      \"email\":\"andiiii9822@gmail.com\",\r\n      \"fullname\":\"Nama Lengkap\"\r\n    }",
               "options": {
                 "raw": {
                   "language": "json"
@@ -45,7 +45,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": " {\r\n      \"email\": \"johndoe@example.com\",\r\n      \"password\": \"tes123\"\r\n    }",
+              "raw": "{\r\n    \"email\": \"andiiii9822@gmail.com\",\r\n    \"password\": \"tes123\"\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -66,6 +66,54 @@
             }
           },
           "response": []
+        },
+        {
+          "name": "verify-email",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImViYTZlMjlmLWYyNDktNGExMS1hN2Y1LTM5NjZhNjliYjhmMiIsInVzZXJuYW1lIjoic2JkOTg3IiwiaWF0IjoxNzcxNzUzNDc3LCJleHAiOjE3NzE3NTcwNzd9.lfnDR7T7kEiUzi2hbuCUzI4jDaEo_wiPwL1XVXegg9s",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": " {\r\n      \"username\": \"johndoe\",\r\n      \"password\": \"tes123\"\r\n    }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/verify-email?token=aaaaa-33ea-4e5e-97c6-c77d5a213e80",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "verify-email"
+              ],
+              "query": [
+                {
+                  "key": "token",
+                  "value": "aaaaa-33ea-4e5e-97c6-c77d5a213e80"
+                }
+              ]
+            }
+          },
+          "response": []
         }
       ]
     },
@@ -74,19 +122,37 @@
       "item": [
         {
           "name": "getMovies",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
               "bearer": [
                 {
                   "key": "token",
-                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxM2VjMzM1LTM1OTAtNGEwNy1iMmFmLTY5Zjk4NGJkYjFiOSIsInVzZXJuYW1lIjoiam9obmRvZSIsImlhdCI6MTc3MTI0MzM4NCwiZXhwIjoxNzcxMjQ2OTg0fQ.DLBn1z88Ry_wvp83bGyN-V2Ve5oD6xmyd__rPT47irQ",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImViYTZlMjlmLWYyNDktNGExMS1hN2Y1LTM5NjZhNjliYjhmMiIsInVzZXJuYW1lIjoic2JkOTg3IiwiaWF0IjoxNzcxNzQ1MjI5LCJleHAiOjE3NzE3NDg4Mjl9.K6ZczR9cECKuaGLTFLIBOMRXDqONXBbuXyt3EQL3kvs",
                   "type": "string"
                 }
               ]
             },
             "method": "GET",
-            "header": [],
+            "header": [
+              {
+                "key": "search",
+                "value": "",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "http://localhost:3000/api/movies",
               "protocol": "http",
@@ -103,6 +169,154 @@
           "response": []
         },
         {
+          "name": "getMoviesFilter",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImViYTZlMjlmLWYyNDktNGExMS1hN2Y1LTM5NjZhNjliYjhmMiIsInVzZXJuYW1lIjoic2JkOTg3IiwiaWF0IjoxNzcxNzQ1MjI5LCJleHAiOjE3NzE3NDg4Mjl9.K6ZczR9cECKuaGLTFLIBOMRXDqONXBbuXyt3EQL3kvs",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/movies?genre=Drama",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "movies"
+              ],
+              "query": [
+                {
+                  "key": "genre",
+                  "value": "Drama"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getMoviesSearch",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxM2VjMzM1LTM1OTAtNGEwNy1iMmFmLTY5Zjk4NGJkYjFiOSIsInVzZXJuYW1lIjoidXNlcnRlc3QiLCJpYXQiOjE3NzE3Mjc2NzMsImV4cCI6MTc3MTczMTI3M30.qUz_ruzETBr-bUmRI5F899QwDKLLzx6RzLCBmcIjb08",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/movies?search=big",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "movies"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "big"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getMoviesSort",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImViYTZlMjlmLWYyNDktNGExMS1hN2Y1LTM5NjZhNjliYjhmMiIsInVzZXJuYW1lIjoic2JkOTg3IiwiaWF0IjoxNzcxNzUzNDc3LCJleHAiOjE3NzE3NTcwNzd9.lfnDR7T7kEiUzi2hbuCUzI4jDaEo_wiPwL1XVXegg9s",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/movies?sortBy=title&sortOrder=DESC",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "movies"
+              ],
+              "query": [
+                {
+                  "key": "sortBy",
+                  "value": "title"
+                },
+                {
+                  "key": "sortOrder",
+                  "value": "DESC"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
           "name": "selectMovie",
           "request": {
             "auth": {
@@ -110,7 +324,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxM2VjMzM1LTM1OTAtNGEwNy1iMmFmLTY5Zjk4NGJkYjFiOSIsInVzZXJuYW1lIjoiam9obmRvZSIsImlhdCI6MTc3MTI0MzM4NCwiZXhwIjoxNzcxMjQ2OTg0fQ.DLBn1z88Ry_wvp83bGyN-V2Ve5oD6xmyd__rPT47irQ",
+                  "value": "",
                   "type": "string"
                 }
               ]
@@ -154,7 +368,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:3000/api/movies",
+              "raw": "http://localhost:3000/api/series",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -162,7 +376,7 @@
               "port": "3000",
               "path": [
                 "api",
-                "movies"
+                "series"
               ]
             }
           },
@@ -184,7 +398,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:3000/api/movies/5e8b809d-0ad3-11f1-840d-40c2ba7c15c9",
+              "raw": "http://localhost:3000/api/series/62e5587f-0ad3-11f1-840d-40c2ba7c15c9",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -192,8 +406,8 @@
               "port": "3000",
               "path": [
                 "api",
-                "movies",
-                "5e8b809d-0ad3-11f1-840d-40c2ba7c15c9"
+                "series",
+                "62e5587f-0ad3-11f1-840d-40c2ba7c15c9"
               ]
             }
           },
@@ -249,11 +463,21 @@
         {
           "name": "updateProfile",
           "request": {
-            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImViYTZlMjlmLWYyNDktNGExMS1hN2Y1LTM5NjZhNjliYjhmMiIsInVzZXJuYW1lIjoic2JkOTg3IiwiaWF0IjoxNzcxNzYxMjg1LCJleHAiOjE3NzE3NjQ4ODV9.ipx_BB_1MpmMuv-sFp5enm0fk7DGcLUEqqktZo8ag4I",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": " {\r\n      \"username\": \"johndoe\",\r\n      \"password\": \"tes123\"\r\n    }",
+              "raw": "{ \"avatar\": \"http://localhost:3000/uploads/avatar-123456789.jpg\" }",
               "options": {
                 "raw": {
                   "language": "json"
@@ -261,7 +485,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:3000/api/login",
+              "raw": "http://localhost:3000/api/profile",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -269,7 +493,7 @@
               "port": "3000",
               "path": [
                 "api",
-                "login"
+                "profile"
               ]
             }
           },
@@ -330,7 +554,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxM2VjMzM1LTM1OTAtNGEwNy1iMmFmLTY5Zjk4NGJkYjFiOSIsInVzZXJuYW1lIjoidXNlcnRlc3QiLCJpYXQiOjE3NzEyNDc2MjksImV4cCI6MTc3MTI1MTIyOX0.wuZXLcEEXS_ys8a45Yq8a09iAO45bw87UIuXTckQxPQ",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA1YmUyYjI1LWFlZDMtNDE2Ny04NTdlLTYwOTA5YWE4ZjA0MiIsInVzZXJuYW1lIjoiam9obmRvZSIsImlhdCI6MTc3MTI0ODYwMCwiZXhwIjoxNzcxMjUyMjAwfQ.MVGSUwW-KYd_4U6yPWcpKhycF1CrvZOiNTlftdXop0k",
                   "type": "string"
                 }
               ]
@@ -364,11 +588,21 @@
         {
           "name": "deleteList",
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxM2VjMzM1LTM1OTAtNGEwNy1iMmFmLTY5Zjk4NGJkYjFiOSIsInVzZXJuYW1lIjoidXNlcnRlc3QiLCJpYXQiOjE3NzEyNDc2MjksImV4cCI6MTc3MTI1MTIyOX0.wuZXLcEEXS_ys8a45Yq8a09iAO45bw87UIuXTckQxPQ",
+                  "type": "string"
+                }
+              ]
+            },
             "method": "DELETE",
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": " {\r\n      \"username\": \"johndoe\",\r\n      \"password\": \"tes123\"\r\n    }",
+              "raw": "{\r\n      \"contentId\": \"62e5587f-0ad3-11f1-840d-40c2ba7c15c9\",\r\n      \"type\": \"series\" \r\n    }",
               "options": {
                 "raw": {
                   "language": "json"
@@ -376,7 +610,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:3000/api/login",
+              "raw": "http://localhost:3000/api/my-list",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -384,7 +618,7 @@
               "port": "3000",
               "path": [
                 "api",
-                "login"
+                "my-list"
               ]
             }
           },
@@ -406,7 +640,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxM2VjMzM1LTM1OTAtNGEwNy1iMmFmLTY5Zjk4NGJkYjFiOSIsInVzZXJuYW1lIjoidXNlcnRlc3QiLCJpYXQiOjE3NzEyNDc2MjksImV4cCI6MTc3MTI1MTIyOX0.wuZXLcEEXS_ys8a45Yq8a09iAO45bw87UIuXTckQxPQ",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxM2VjMzM1LTM1OTAtNGEwNy1iMmFmLTY5Zjk4NGJkYjFiOSIsInVzZXJuYW1lIjoidXNlcnRlc3QiLCJpYXQiOjE3NzEyNDkzNDcsImV4cCI6MTc3MTI1Mjk0N30.nvcjhIMscXTz0fpTuXBsdc4eVsJ1PsUXV1SzkLg7uI8",
                   "type": "string"
                 }
               ]
@@ -423,7 +657,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:3000/api/my-list",
+              "raw": "http://localhost:3000/api/subscription/packages",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -431,7 +665,8 @@
               "port": "3000",
               "path": [
                 "api",
-                "my-list"
+                "subscription",
+                "packages"
               ]
             }
           },
@@ -445,7 +680,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxM2VjMzM1LTM1OTAtNGEwNy1iMmFmLTY5Zjk4NGJkYjFiOSIsInVzZXJuYW1lIjoidXNlcnRlc3QiLCJpYXQiOjE3NzEyNDc2MjksImV4cCI6MTc3MTI1MTIyOX0.wuZXLcEEXS_ys8a45Yq8a09iAO45bw87UIuXTckQxPQ",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxM2VjMzM1LTM1OTAtNGEwNy1iMmFmLTY5Zjk4NGJkYjFiOSIsInVzZXJuYW1lIjoidXNlcnRlc3QiLCJpYXQiOjE3NzEzMDIwOTEsImV4cCI6MTc3MTMwNTY5MX0.qBM0SZipD83Y_fZYMznw_Qihcgqjc2bEKaXdhOpZUdI",
                   "type": "string"
                 }
               ]
@@ -454,7 +689,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": " {\r\n      \"packageId\": 1\r\n    }",
+              "raw": " {\r\n      \"packageId\": 8\r\n    }",
               "options": {
                 "raw": {
                   "language": "json"
@@ -485,7 +720,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxM2VjMzM1LTM1OTAtNGEwNy1iMmFmLTY5Zjk4NGJkYjFiOSIsInVzZXJuYW1lIjoidXNlcnRlc3QiLCJpYXQiOjE3NzEyNDc2MjksImV4cCI6MTc3MTI1MTIyOX0.wuZXLcEEXS_ys8a45Yq8a09iAO45bw87UIuXTckQxPQ",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA1YmUyYjI1LWFlZDMtNDE2Ny04NTdlLTYwOTA5YWE4ZjA0MiIsInVzZXJuYW1lIjoiam9obmRvZSIsImlhdCI6MTc3MTMwMjQxOCwiZXhwIjoxNzcxMzA2MDE4fQ.mLji5nQ6KsbVK6R9LyOwt0uuwM7SwkU6i-UODYdH8ug",
                   "type": "string"
                 }
               ]
@@ -494,7 +729,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n        \"id\": \"\",\r\n        \"status\": \"PENDING\",\r\n        \"total_price\": 50000\r\n      }",
+              "raw": " {\r\n      \"orderId\": \"e11e8a6e-d650-4305-8d78-29c10736bb05\",\r\n      \"paymentMethod\": \"OVO\" \r\n    }",
               "options": {
                 "raw": {
                   "language": "json"
@@ -502,7 +737,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:3000/api/subscription/subscribe",
+              "raw": "http://localhost:3000/api/subscription/pay",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -511,7 +746,7 @@
               "path": [
                 "api",
                 "subscription",
-                "subscribe"
+                "pay"
               ]
             }
           },
@@ -528,7 +763,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxM2VjMzM1LTM1OTAtNGEwNy1iMmFmLTY5Zjk4NGJkYjFiOSIsInVzZXJuYW1lIjoidXNlcnRlc3QiLCJpYXQiOjE3NzEyNTE4MTAsImV4cCI6MTc3MTI1NTQxMH0.BBd8LsxiClI2ayxN_vNF5UqisXWzITUGm9D2YXfWaAA",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxM2VjMzM1LTM1OTAtNGEwNy1iMmFmLTY5Zjk4NGJkYjFiOSIsInVzZXJuYW1lIjoidXNlcnRlc3QiLCJpYXQiOjE3NzEzMDIwOTEsImV4cCI6MTc3MTMwNTY5MX0.qBM0SZipD83Y_fZYMznw_Qihcgqjc2bEKaXdhOpZUdI",
                   "type": "string"
                 }
               ]
@@ -571,7 +806,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxM2VjMzM1LTM1OTAtNGEwNy1iMmFmLTY5Zjk4NGJkYjFiOSIsInVzZXJuYW1lIjoidXNlcnRlc3QiLCJpYXQiOjE3NzEyNTE4MTAsImV4cCI6MTc3MTI1NTQxMH0.BBd8LsxiClI2ayxN_vNF5UqisXWzITUGm9D2YXfWaAA",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA1YmUyYjI1LWFlZDMtNDE2Ny04NTdlLTYwOTA5YWE4ZjA0MiIsInVzZXJuYW1lIjoiam9obmRvZSIsImlhdCI6MTc3MTMwMjQxOCwiZXhwIjoxNzcxMzA2MDE4fQ.mLji5nQ6KsbVK6R9LyOwt0uuwM7SwkU6i-UODYdH8ug",
                   "type": "string"
                 }
               ]
@@ -588,7 +823,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:3000/api/subscription/orders",
+              "raw": "http://localhost:3000/api/subscription/orders/59e6c17f-6f5d-4d3d-b376-f3f221940764",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -597,7 +832,8 @@
               "path": [
                 "api",
                 "subscription",
-                "orders"
+                "orders",
+                "59e6c17f-6f5d-4d3d-b376-f3f221940764"
               ]
             }
           },
@@ -611,7 +847,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxM2VjMzM1LTM1OTAtNGEwNy1iMmFmLTY5Zjk4NGJkYjFiOSIsInVzZXJuYW1lIjoidXNlcnRlc3QiLCJpYXQiOjE3NzEyNDc2MjksImV4cCI6MTc3MTI1MTIyOX0.wuZXLcEEXS_ys8a45Yq8a09iAO45bw87UIuXTckQxPQ",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxM2VjMzM1LTM1OTAtNGEwNy1iMmFmLTY5Zjk4NGJkYjFiOSIsInVzZXJuYW1lIjoidXNlcnRlc3QiLCJpYXQiOjE3NzEzMDI3ODcsImV4cCI6MTc3MTMwNjM4N30.DFaSnJ-qYBphXUr6BsvY9dzfNJxHPB048tTCjXMPejk",
                   "type": "string"
                 }
               ]
@@ -620,7 +856,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n        \"id\": \"\",\r\n        \"status\": \"PENDING\",\r\n        \"total_price\": 50000\r\n      }",
+              "raw": "{\r\n      \"orderId\": \"e11e8a6e-d650-4305-8d78-29c10736bb05\"\r\n    }",
               "options": {
                 "raw": {
                   "language": "json"
@@ -628,7 +864,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:3000/api/subscription/subscribe",
+              "raw": "http://localhost:3000/api/subscription/cancel",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -637,7 +873,53 @@
               "path": [
                 "api",
                 "subscription",
-                "subscribe"
+                "cancel"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "upload",
+      "item": [
+        {
+          "name": "upload",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImViYTZlMjlmLWYyNDktNGExMS1hN2Y1LTM5NjZhNjliYjhmMiIsInVzZXJuYW1lIjoic2JkOTg3IiwiaWF0IjoxNzcxNzYxMjg1LCJleHAiOjE3NzE3NjQ4ODV9.ipx_BB_1MpmMuv-sFp5enm0fk7DGcLUEqqktZo8ag4I",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "avatar",
+                  "type": "file",
+                  "uuid": "52619e18-3430-45bb-b4b6-58c9d295093a",
+                  "src": "/D:/Tes/chill-api/uploads/Screenshot 2026-01-25 214049.png"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/upload",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "upload"
               ]
             }
           },
