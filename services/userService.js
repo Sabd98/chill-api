@@ -4,16 +4,23 @@ import { v4 as uuidv4 } from 'uuid';
 import UserModel from '../models/userModel.js';
 
 class UserService {
-  static async register(username, password) {
+  static async register(username, password, email, fullname) {
     const existingUser = await UserModel.findByUsername(username);
     if (existingUser) {
       throw new Error('Username already exists');
     }
 
+    if (email) {
+      const existingEmail = await UserModel.findByEmail(email);
+      if (existingEmail) {
+        throw new Error('Email already exists');
+      }
+    }
+
     const hashedPassword = await bcrypt.hash(password, 10);
     const userId = uuidv4();
     
-    const newUser = await UserModel.create(userId, username, hashedPassword);
+    const newUser = await UserModel.create(userId, username, hashedPassword, email, fullname);
     return newUser;
   }
 

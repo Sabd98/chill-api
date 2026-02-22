@@ -25,10 +25,13 @@ DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `id` char(36) NOT NULL,
   `username` varchar(255) NOT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `fullname` varchar(255) DEFAULT NULL,
   `password` varchar(255) NOT NULL,
   `avatar` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -38,7 +41,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('05be2b25-aed3-4167-857e-60909aa8f042','johndoe','$2b$10$QA6rin2DcqinwJ4mhkaVnuJspxxgymQk5asqQngjI2e4yVgsI9vgq',NULL,'2026-02-16 13:29:51'),('413ec335-3590-4a07-b2af-69f984bdb1b9','usertest','$2b$10$T/CPiXHvunmNi9uTuXVx0u0RaHAFwYUmgaUI172BbdD0de00oTn8u','https://example.com/avatar.png','2026-02-16 11:57:05'),('user-1111-2222-3333-444455556666','budi_nonton','hashedpassword123','/avatars/budi.png','2026-02-16 03:08:41'),('user-aaaa-bbbb-cccc-ddddeeeeffff','siti_chill','hashedpassword456','/avatars/siti.png','2026-02-16 03:08:41');
+INSERT INTO `user` VALUES ('05be2b25-aed3-4167-857e-60909aa8f042','johndoe','johndoe@example.com','John Doe','$2b$10$QA6rin2DcqinwJ4mhkaVnuJspxxgymQk5asqQngjI2e4yVgsI9vgq',NULL,'2026-02-16 13:29:51'),('413ec335-3590-4a07-b2af-69f984bdb1b9','usertest','usertest@example.com','User Test','$2b$10$T/CPiXHvunmNi9uTuXVx0u0RaHAFwYUmgaUI172BbdD0de00oTn8u','https://example.com/avatar.png','2026-02-16 11:57:05'),('user-1111-2222-3333-444455556666','budi_nonton','budi@example.com','Budi Nonton','hashedpassword123','/avatars/budi.png','2026-02-16 03:08:41'),('user-aaaa-bbbb-cccc-ddddeeeeffff','siti_chill','siti@example.com','Siti Chill','hashedpassword456','/avatars/siti.png','2026-02-16 03:08:41');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

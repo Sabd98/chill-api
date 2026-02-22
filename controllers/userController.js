@@ -4,12 +4,12 @@ import { successResponse, errorResponse } from '../utils/responseHelper.js';
 class UserController {
   static async register(req, res) {
     try {
-      const { username, password } = req.body;
+      const { username, password, email, fullname } = req.body;
       if (!username || !password) {
         return errorResponse(res, 'Username and password are required', 400);
       }
 
-      const user = await UserService.register(username, password);
+      const user = await UserService.register(username, password, email, fullname);
       return successResponse(res, 'User registered successfully', user, 201);
     } catch (error) {
       return errorResponse(res, error.message, 400);
