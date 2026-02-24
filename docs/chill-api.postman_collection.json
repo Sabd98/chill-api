@@ -412,6 +412,154 @@
             }
           },
           "response": []
+        },
+        {
+          "name": "getSeriesFilter",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImViYTZlMjlmLWYyNDktNGExMS1hN2Y1LTM5NjZhNjliYjhmMiIsInVzZXJuYW1lIjoic2JkOTg3IiwiaWF0IjoxNzcxNzQ1MjI5LCJleHAiOjE3NzE3NDg4Mjl9.K6ZczR9cECKuaGLTFLIBOMRXDqONXBbuXyt3EQL3kvs",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/movies?genre=Drama",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "movies"
+              ],
+              "query": [
+                {
+                  "key": "genre",
+                  "value": "Drama"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getSeriesSearch",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxM2VjMzM1LTM1OTAtNGEwNy1iMmFmLTY5Zjk4NGJkYjFiOSIsInVzZXJuYW1lIjoidXNlcnRlc3QiLCJpYXQiOjE3NzE3Mjc2NzMsImV4cCI6MTc3MTczMTI3M30.qUz_ruzETBr-bUmRI5F899QwDKLLzx6RzLCBmcIjb08",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/movies?search=blue",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "movies"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "blue"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getSeriesSort",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImViYTZlMjlmLWYyNDktNGExMS1hN2Y1LTM5NjZhNjliYjhmMiIsInVzZXJuYW1lIjoic2JkOTg3IiwiaWF0IjoxNzcxNzUzNDc3LCJleHAiOjE3NzE3NTcwNzd9.lfnDR7T7kEiUzi2hbuCUzI4jDaEo_wiPwL1XVXegg9s",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/movies?sortBy=title&sortOrder=DESC",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "movies"
+              ],
+              "query": [
+                {
+                  "key": "sortBy",
+                  "value": "title"
+                },
+                {
+                  "key": "sortOrder",
+                  "value": "DESC"
+                }
+              ]
+            }
+          },
+          "response": []
         }
       ]
     },
@@ -619,6 +767,154 @@
               "path": [
                 "api",
                 "my-list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getMyListFilter",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImViYTZlMjlmLWYyNDktNGExMS1hN2Y1LTM5NjZhNjliYjhmMiIsInVzZXJuYW1lIjoic2JkOTg3IiwiaWF0IjoxNzcxNzQ1MjI5LCJleHAiOjE3NzE3NDg4Mjl9.K6ZczR9cECKuaGLTFLIBOMRXDqONXBbuXyt3EQL3kvs",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/movies?genre=Drama",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "movies"
+              ],
+              "query": [
+                {
+                  "key": "genre",
+                  "value": "Drama"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getMyListSearch",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxM2VjMzM1LTM1OTAtNGEwNy1iMmFmLTY5Zjk4NGJkYjFiOSIsInVzZXJuYW1lIjoidXNlcnRlc3QiLCJpYXQiOjE3NzE3Mjc2NzMsImV4cCI6MTc3MTczMTI3M30.qUz_ruzETBr-bUmRI5F899QwDKLLzx6RzLCBmcIjb08",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/movies?search=blue",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "movies"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "blue"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getMyListSort",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImViYTZlMjlmLWYyNDktNGExMS1hN2Y1LTM5NjZhNjliYjhmMiIsInVzZXJuYW1lIjoic2JkOTg3IiwiaWF0IjoxNzcxNzUzNDc3LCJleHAiOjE3NzE3NTcwNzd9.lfnDR7T7kEiUzi2hbuCUzI4jDaEo_wiPwL1XVXegg9s",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/movies?sortBy=title&sortOrder=DESC",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "movies"
+              ],
+              "query": [
+                {
+                  "key": "sortBy",
+                  "value": "title"
+                },
+                {
+                  "key": "sortOrder",
+                  "value": "DESC"
+                }
               ]
             }
           },
